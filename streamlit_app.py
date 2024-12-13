@@ -9,6 +9,13 @@ import pandas as pd
 
 # Charger le fichier Excel
 file_path = "Calculateur_Economie_Energie_Pompes.xlsx"
+import os
+
+# Vérifiez si le fichier existe
+if not os.path.exists(file_path):
+    st.error(f"Le fichier Excel '{file_path}' est introuvable. Veuillez vérifier le chemin ou téléverser le fichier.")
+else:
+    sll_data, dsf_data = load_data()
 
 # Charger les deux feuilles pertinentes
 def load_data():
